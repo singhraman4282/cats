@@ -22,34 +22,41 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="658"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rfH-bW-x4L">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="125" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="7gp-0w-DkK" customClass="CustomCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-pV-JTy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-pV-JTy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="a9I-hM-bhh"/>
-                                                        <constraint firstAttribute="height" constant="100" id="gAr-GF-Qgr"/>
+                                                        <constraint firstAttribute="width" constant="125" id="72K-M7-9uF"/>
+                                                        <constraint firstAttribute="height" constant="125" id="O3q-6S-p2c"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRa-9v-8aH">
+                                                    <rect key="frame" x="0.0" y="125" width="125" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.19677341798315753" green="0.20075914521579671" blue="0.21625766871165641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="DxO-pV-JTy" firstAttribute="leading" secondItem="7gp-0w-DkK" secondAttribute="leading" id="gLK-DN-vv9"/>
-                                            <constraint firstItem="DxO-pV-JTy" firstAttribute="top" secondItem="7gp-0w-DkK" secondAttribute="top" id="rlk-xg-TlN"/>
+                                            <constraint firstItem="DxO-pV-JTy" firstAttribute="leading" secondItem="7gp-0w-DkK" secondAttribute="leading" id="IBH-Hu-byi"/>
+                                            <constraint firstItem="DxO-pV-JTy" firstAttribute="top" secondItem="7gp-0w-DkK" secondAttribute="top" id="bdx-Oa-ri6"/>
                                         </constraints>
-                                        <size key="customSize" width="100" height="100"/>
                                         <connections>
+                                            <outlet property="cellLabel" destination="wRa-9v-8aH" id="A6b-2Y-VrJ"/>
                                             <outlet property="imageView" destination="DxO-pV-JTy" id="5s2-IQ-BFC"/>
                                         </connections>
                                     </collectionViewCell>

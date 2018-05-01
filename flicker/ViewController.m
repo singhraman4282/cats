@@ -47,10 +47,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     PhotoObject *newPhotoObject = [self.allPhotos objectAtIndex:indexPath.row];
     cell.imageView.image = newPhotoObject.image;
-    NSLog(@"%@", newPhotoObject.photoURL);
-    //    NSLog(@"%d photos", self.allPhotos.count);
-    
-    
+    cell.cellLabel.text = newPhotoObject.title;
     
     return cell;
     
@@ -61,7 +58,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 -(void)loadJson {
-    NSLog(@"loadjsoncalled");
+    
     NSURL *url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=df067bfc5c1fcc1d784b40d2751e0355&tags=cat"];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     
@@ -109,7 +106,7 @@ static NSString * const reuseIdentifier = @"Cell";
             [self.allPhotos addObject:myPhotoObject];
             
             NSURL *thisURL = [NSURL URLWithString:myPhotoObject.photoURL];
-            
+            NSLog(@"%@", myPhotoObject.photoURL);
             [self loadImageWithURLandReturnImage:thisURL forPhotoObject:myPhotoObject];
             
         }//forLoop
@@ -127,7 +124,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }//loadJson
 
 -(void)loadImageWithURLandReturnImage:(NSURL *)imageURL forPhotoObject:(PhotoObject *)thisPhotoObject{
-    NSLog(@"running loadImageWithURLandReturnImage");
+    
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
